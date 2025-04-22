@@ -1,0 +1,32 @@
+Proceso sin_titulo
+	definir medicionanterior, medicionactual, costokw Como Real;
+	definir costomantenimiento, totalaabonar, tasamunicipal Como Entero;
+	definir netoacobrar, impuestos, mantenimiento, municipio, cargos, iva Como real;
+	
+	escribir "cual fue el consumo del mes anterior?";
+	leer medicionanterior;
+	
+	escribir "cual fue el consumo del mes actual?";
+	leer medicionactual;
+	
+	escribir "ingrese el costo del kw?";
+	leer costokw;
+	
+	escribir "cual es el costo de mantenimiento del servicio?";
+	leer costomantenimiento;
+	
+	escribir "ingrese la tasa municipal";
+	leer tasamunicipal;
+	
+	iva <- 0.21;
+	municipio <- tasamunicipal / 100;
+	
+	netoacobrar <- (medicionanterior + medicionactual) * costokw;
+	impuestos <- (tasamunicipal + iva) * netoacobrar;
+	totalaabonar <- netoacobrar + impuestos + costomantenimiento;
+	
+	escribir "el abonar de su servicio es:", netoacobrar;
+	escribir "el costo de mantenimiento es:", costomantenimiento;
+	escribir "los impuestos de su servicio es:", impuestos;
+	escribir "el total a abonar de su servicio en total es:", totalaabonar;
+FinProceso
